@@ -7,7 +7,7 @@ function createGun($db, $name, $caliber, $descript, $rang, $picture) {
     
     $imagePath = "";
 
-    if (!str_starts_with($picture["type"], "image/")) {
+    if (strpos($picture["type"], "image/") !== 0) {
         echo "<p>Lze nahrát jen obrázky!</p>";
         return;
     }
@@ -119,7 +119,7 @@ function editGun($db, $name, $caliber, $descript, $rang, $id, $picture) {
             return;
         }
 
-        if (!str_starts_with($picture["type"], "image/")) {
+        if (strpos($picture["type"], "image/") !== 0) {
             echo "<p>Lze nahrát jen obrázky!</p>";
             return;
         }

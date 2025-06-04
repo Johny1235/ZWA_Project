@@ -7,7 +7,7 @@ function createWeapon($db, $name, $material, $descript, $picture) {
     
     $imagePath = "";
 
-    if (!str_starts_with($picture["type"], "image/")) {
+    if (strpos($picture["type"], "image/") !== 0) {
         echo "<p>Lze nahrát jen obrázky!</p>";
         return;
     }

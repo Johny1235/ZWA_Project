@@ -119,7 +119,7 @@ function editWeapon($db, $name, $material, $descript, $id, $picture) {
             return;
         }
 
-        if (!str_starts_with($picture["type"], "image/")) {
+        if (strpos($picture["type"], "image/") !== 0) {
             echo "<p>Lze nahrát jen obrázky!</p>";
             return;
         }
